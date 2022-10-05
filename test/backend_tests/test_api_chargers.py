@@ -5,7 +5,7 @@ import pytest
 #CHARGER_API_URL = "http://18.202.253.30:8080/chargers/"
 
 # IP to local Backend
-CHARGER_API_URL = "http://127.0.0.1:8080/chargers/"
+CHARGER_API_URL = "http://localhost:8080/chargers/"
 
 
 class TestApiChargers:
