@@ -28,3 +28,6 @@ jobs:
         envkey_ADMIN_POOL_ID: ${{ secrets.ADMIN_POOL_ID }}
         envkey_ADMIN_POOL_SECRET: ${{ secrets.ADMIN_POOL_SECRET }}
         directory: backend-app/
+
+    - name: launch docker container
+      run: docker-compose up
