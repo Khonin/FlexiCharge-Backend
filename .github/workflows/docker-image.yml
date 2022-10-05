@@ -11,12 +11,13 @@ jobs:
   start-backend-app:
 
     runs-on: ubuntu-latest
-
+    environment: workflow test
     steps:    
     - name: Checkout Branch
       uses: actions/checkout@v3
     
     - name: Create .env file
+      
       uses: SpicyPizza/create-envfile@v1.3.0
       with:
         envkey_AWS_REGION: ${{ secrets.AWS_REGION }}
