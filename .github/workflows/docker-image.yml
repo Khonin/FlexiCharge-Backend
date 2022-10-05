@@ -33,4 +33,4 @@ jobs:
         directory: backend-app/
 
     - name: launch docker container
-      run: docker-compose up
+      run: docker-compose up &
