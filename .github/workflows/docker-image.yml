@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  start-backend-app:
+  Start-Backend-App:
 
     runs-on: ubuntu-latest
     environment: workflow test
@@ -36,7 +36,7 @@ jobs:
     - name: launch docker container
       run: docker-compose up &
       
-  tests:
+  Run-All-Tests:
   
     runs-on: ubuntu-latest
     steps:
