@@ -36,7 +36,7 @@ jobs:
     - name: launch docker container
       run: docker-compose up &
       
-  Run-All-Tests:
+  Run-Backend-Tests:
   
     runs-on: ubuntu-latest
     steps:
