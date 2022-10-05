@@ -27,4 +27,4 @@ jobs:
         envkey_ADMIN_POOL: ${{ secrets.ADMIN_POOL }}
         envkey_ADMIN_POOL_ID: ${{ secrets.ADMIN_POOL_ID }}
         envkey_ADMIN_POOL_SECRET: ${{ secrets.ADMIN_POOL_SECRET }}
-        directory: /github/workspace/FlexiCharge-Backend/backend-app/
+        directory: github/workspace/FlexiCharge-Backend/backend-app/
