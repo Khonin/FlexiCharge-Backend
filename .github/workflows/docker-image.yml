@@ -21,7 +21,7 @@ jobs:
       
       uses: SpicyPizza/create-envfile@v1.3.0
       with:
-        envkey_PORT: 8000
+        envkey_PORT: 8080
         envkey_RUN_OCPP_TEST: 0
         envkey_USE_LOCAL_DATABASE: 1
         envkey_AWS_REGION: ${{ secrets.AWS_REGION }}
