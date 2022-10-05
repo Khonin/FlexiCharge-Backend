@@ -1,7 +1,11 @@
 from urllib import response
 import requests
 import pytest
-CHARGER_API_URL = "http://18.202.253.30:8080/chargers/"
+# IP to online backend
+#CHARGER_API_URL = "http://18.202.253.30:8080/chargers/"
+
+# IP to local Backend
+CHARGER_API_URL = "http://127.0.0.1:8080/chargers/"
 
 
 class TestApiChargers:
@@ -16,7 +20,7 @@ class TestApiChargers:
 
     # The way I've learnt is that test should be simple and only test one thing, so using 2 asserts might be wrong
 
-    def test_chargerid_exists(self, chargerid="100009"):
+    def test_chargerid_exists(self, chargerid="100007"):
 
         url = CHARGER_API_URL + chargerid
 
@@ -56,13 +60,13 @@ class TestApiChargers:
         #       *  create charger X
         #       *  assert that charger X DOES exists
 
-    def test_chargerid_exists_status_code(self, chargerid="100009"):
+    def test_chargerid_exists_status_code(self, chargerid="100000"):
         url = CHARGER_API_URL + chargerid
         r = requests.get(url)
 
         assert r.status_code == 200, "Charger with id: " + chargerid + " does not exist."
 
-    def test_charger_does_not_exist_status_code(self, chargerid="10009"):
+    def test_charger_does_not_exist_status_code(self, chargerid="99999"):
         url = CHARGER_API_URL + chargerid
         r = requests.get(url)
 
@@ -71,14 +75,14 @@ class TestApiChargers:
     # Function to test if charger is available
     # DOESNT WORK PROPERLY
 
-    def test_charger_status_is_available(self, chargerid="100009"):
+    def test_charger_status_is_available(self, chargerid="100006"):
         url = CHARGER_API_URL + chargerid
         r = requests.get(url)
 
         status = r.json()["status"]
         assert status == "Available", f"Charger is not available {status}"
 
-    def test_charger_serialnmbr(self, serial_number="testnumber15"):
+    def test_charger_serialnmbr(self, serial_number="abc117"):
         url = CHARGER_API_URL + "serial/" + serial_number
         r = requests.get(url)
 
