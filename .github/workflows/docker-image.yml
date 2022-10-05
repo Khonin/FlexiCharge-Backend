@@ -12,7 +12,8 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: workflow test
-    steps:    
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout Branch
       uses: actions/checkout@v3
     
@@ -34,3 +35,28 @@ jobs:
 
     - name: launch docker container
       run: docker-compose up &
+      
+  tests:
+  
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+    
+    - name: Execute tests
+    
+    # Runs a set of commands using the runners shell
+      run: |
+        export PYTHONPATH=.
+        pip install -r ./test/requirements.txt
+      
+    - name: Run PyTest
+      run: |
+        python -m pytest --junit-xml=report.xml
+      
+    - name: Publish test result
+      uses: mikepenz/action-junit-report@v3
+      if: always() # always run even if the previous step fails
+      with:
+        report_paths: '**/*.xml'
+        
