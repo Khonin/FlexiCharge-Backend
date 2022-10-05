@@ -17,22 +17,12 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Create .env file
-      env: #As an environment variable
-        AWS_REGION: ${{ secrets.AWS_REGION }}
-        USER_POOL: ${{ secrets.USER_POOL }}
-        USER_POOL_ID: ${{ secrets.USER_POOL_ID }}
-        USER_POOL_SECRET: ${{ secrets.USER_POOL_SECRET }}
-        ADMIN_POOL: ${{ secrets.ADMIN_POOL }}
-        ADMIN_POOL_ID: ${{ secrets.ADMIN_POOL_ID }}
-        ADMIN_POOL_SECRET: ${{ secrets.ADMIN_POOL_SECRET }}
-        
       uses: SpicyPizza/create-envfile@v1.3.0
       with:
-        envkey_AWS_REGION: ${{env.AWS_REGION}}
-        envkey_USER_POOL: ${{env.USER_POOL}}
-        envkey_USER_POOL_ID: ${{env.USER_POOL_ID}}
-        envkey_USER_POOL_SECRET: ${{env.USER_POOL_SECRET}}
-        envkey_ADMIN_POOL: ${{env.ADMIN_POOL}}
-        envkey_ADMIN_POOL_ID: ${{env.ADMIN_POOL_ID}}
-        envkey_ADMIN_POOL_SECRET: ${{env.ADMIN_POOL_SECRET}}
-        
+        envkey_AWS_REGION: ${{ secrets.AWS_REGION }}
+        envkey_USER_POOL: ${{ secrets.USER_POOL }}
+        envkey_USER_POOL_ID: ${{ secrets.USER_POOL_ID }}
+        envkey_USER_POOL_SECRET: ${{ secrets.USER_POOL_SECRET }}
+        envkey_ADMIN_POOL: ${{ secrets.ADMIN_POOL }}
+        envkey_ADMIN_POOL_ID: ${{ secrets.ADMIN_POOL_ID }}
+        envkey_ADMIN_POOL_SECRET: ${{ secrets.ADMIN_POOL_SECRET }}
