@@ -12,6 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: workflow test
+    
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout Branch
@@ -35,10 +36,7 @@ jobs:
         directory: backend-app/
 
     - name: launch docker container
-      run: |
-        docker-compose down
-        docker-compose build
-        docker-compose up &
+      run: docker-compose up &
       
   Run-Backend-Tests:
     needs: Start-Backend-App
