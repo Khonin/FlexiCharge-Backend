@@ -64,8 +64,7 @@ jobs:
         pip install -r ./test/requirements.txt
       
     - name: Run PyTest
-      run: |
-        python -m pytest ./test/backend_tests --junit-xml=report.xml
+      run: python -m pytest ./test/backend_tests --junit-xml=report.xml
       
     - name: Publish test result
       uses: mikepenz/action-junit-report@v3
