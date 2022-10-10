@@ -24,6 +24,7 @@ jobs:
         envkey_PORT: 8080
         envkey_RUN_OCPP_TEST: 0
         envkey_USE_LOCAL_DATABASE: 1
+        envkey_BYPASS_KLARNA: 1
         envkey_AWS_REGION: ${{ secrets.AWS_REGION }}
         envkey_USER_POOL: ${{ secrets.USER_POOL }}
         envkey_USER_POOL_ID: ${{ secrets.USER_POOL_ID }}
