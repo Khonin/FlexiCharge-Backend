@@ -21,10 +21,11 @@ container.register({
     dbErrorCheck: awilix.asFunction(require('./database-Interface/error/database-error-check')),
 
     //Validation
-    chargerValidation: awilix.asFunction(require("./database-Interface/validation/chargerValidation")),
+    chargerValidation: awilix.asFunction(require("./database-Interface/validation/charger-validation")),
     transactionValidation: awilix.asFunction(require("./database-Interface/validation/transactionValidation")),
     reservationValidation: awilix.asFunction(require("./database-Interface/validation/reservationValidation")),
-    chargePointValidation: awilix.asFunction(require("./database-Interface/validation/chargePointValidation")),
+    invoicesValidation: awilix.asFunction(require('./database-Interface/validation/invoices-validation')),
+    chargePointValidation: awilix.asFunction(require("./database-Interface/validation/charge-point-validation")),
 
     //Presentation layers
     chargePointsRouter: awilix.asFunction(require('./presentation-layer/charge-point-router-api')),
@@ -34,6 +35,7 @@ container.register({
     authenticationRouter: awilix.asFunction(require('./presentation-layer/authentication-router-api')),
     invoicesRouter: awilix.asFunction(require('./presentation-layer/invoices-router-api')),
     adminRouter: awilix.asFunction(require('./presentation-layer/admin-router-api')),
+    errorsMiddleware: awilix.asFunction(require('./presentation-layer/middleware/errors.middleware')),
 
     //ocpp
     ocpp: awilix.asFunction(require('./xOCPP/server_ocpp')),
@@ -42,11 +44,15 @@ container.register({
     chargerClientHandler: awilix.asFunction(require('./xOCPP/charger_client_handler')),
     chargerMessageHandler: awilix.asFunction(require('./xOCPP/charger_message_handler')),
     constants: awilix.asFunction(require('./xOCPP/constants')),
+    broker: awilix.asFunction(require('./xOCPP/broker')),
+    userClientHandler: awilix.asFunction(require('./xOCPP/user_client_handler')),
+    chargerTests: awilix.asFunction(require('./xOCPP/tests/charger_tests')),
+    liveMetricsTests: awilix.asFunction(require('./xOCPP/tests/livemetrics_tests')),
 
     //v is for variables
     v: awilix.asFunction(require('./xOCPP/variables')),
     func: awilix.asFunction(require('./xOCPP/global_functions')),
-    test: awilix.asFunction(require('./xOCPP/tests/charger_tests')),
+    tester: awilix.asFunction(require('./xOCPP/tests/tester')),
 
     app: awilix.asFunction(require('./presentation-layer/app'))
 })
