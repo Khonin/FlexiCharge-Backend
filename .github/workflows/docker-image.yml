@@ -29,6 +29,7 @@ jobs:
         envkey_PORT: 8080
         envkey_RUN_OCPP_TEST: 0
         envkey_USE_LOCAL_DATABASE: 1
+        envkey_BYPASS_KLARNA: 1
         
         directory: backend-app/
         
