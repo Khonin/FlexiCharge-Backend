@@ -55,15 +55,7 @@ jobs:
     # & is used to signal that this task will keep running, as to not get stuck on this step
     - name: launch docker container
       run: docker-compose up &
-      
-  Run-Backend-Tests:
-    # Runs sequentially to starting the back-end app
-    needs: Start-Backend-App
-    runs-on: ubuntu-latest
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
-    
+
     - name: Execute tests
     
     # Runs a set of commands using the runners shell
