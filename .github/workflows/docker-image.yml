@@ -34,7 +34,10 @@ jobs:
         directory: backend-app/
 
     - name: launch docker container
-      run: docker-compose up &
+      run: |
+        docker-compose down
+        dockcer-compose build
+        docker-compose up &
       
   Run-Backend-Tests:
     needs: Start-Backend-App
