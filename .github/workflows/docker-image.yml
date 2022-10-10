@@ -65,15 +65,17 @@ jobs:
     
     - name: Execute tests
     
-    # Runs a set of commands using the runners shell
+    # Installs the requirements
       run: |
         export PYTHONPATH=.
         pip install -r ./test/requirements.txt
       
+    # Executes the tests within the /backend_tests folder 
     - name: Run PyTest
       run: |
         python -m pytest ./test/backend_tests --junit-xml=report.xml
       
+    # Displays a summary and overlook of test cases
     - name: Publish test result
       uses: mikepenz/action-junit-report@v3
       if: always() # always run even if the previous step fails
