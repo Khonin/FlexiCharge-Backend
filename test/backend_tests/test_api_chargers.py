@@ -2,10 +2,10 @@ from urllib import response
 import requests
 import pytest
 # IP to online backend
-CHARGER_API_URL = "http://18.202.253.30:8080/chargers/"
+#CHARGER_API_URL = "http://18.202.253.30:8080/chargers/"
 
 # IP to local Backend
-#CHARGER_API_URL = "http://host.docker.internal:8080/chargers/"
+CHARGER_API_URL = "http://host.docker.internal:8080/chargers/"
 
 
 class TestApiChargers:
