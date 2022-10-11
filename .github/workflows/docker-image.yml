@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     #Environment used to access secrets
-    environment: ENVIRONMENT_NAME_GOES_HERE
+    #environment: ENVIRONMENT_NAME_GOES_HERE
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout Branch
