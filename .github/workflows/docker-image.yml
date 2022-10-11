@@ -57,7 +57,7 @@ jobs:
       
     # Sleep to let the backend start
     - name: Wait for backend
-      run: sleep 30s
+      run: sleep 120s
       
     # Runs sequentially to starting the back-end app    
     - name: Install requirements
