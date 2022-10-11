@@ -55,16 +55,8 @@ jobs:
     - name: launch docker container
       run: docker-compose up &
       
-  Run-Backend-Tests:
-    # Runs sequentially to starting the back-end app
-    needs: Start-Backend-App
-    runs-on: ubuntu-latest
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v3
-    
-    - name: Execute tests
-    
+    # Runs sequentially to starting the back-end app    
+    - name: Install requirements
     # Installs the requirements
       run: |
         export PYTHONPATH=.
