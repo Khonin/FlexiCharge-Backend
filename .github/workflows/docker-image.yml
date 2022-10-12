@@ -32,7 +32,9 @@ jobs:
         envkey_PORT: 8080
         envkey_RUN_OCPP_TEST: 0
         envkey_USE_LOCAL_DATABASE: 1
-        
+        envkey_OCPP_TEST_INTERVAL_MULTIPLIER: 1
+        envkey_BYPASS_KLARNA: 1
+        envkey_LIVEMETRICS_DB_UPDATE_INTERVAL: 10000
         directory: backend-app/
         
         # When secrets exist use these calls to obfuscate
