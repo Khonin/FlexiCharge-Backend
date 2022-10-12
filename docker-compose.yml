@@ -4,7 +4,7 @@ services:
     build: ./backend-app
     image: backend_app
     ports: 
-      - 8081:8081
+      - 8081:8080
       - 1337:1337
     extra_hosts:
       - "host.docker.internal:host-gateway"
