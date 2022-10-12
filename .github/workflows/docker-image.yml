@@ -53,10 +53,6 @@ jobs:
         envkey_ADMIN_POOL_ID: mq90k6fets8944tapp6tjgme8
         envkey_ADMIN_POOL_SECRET: 1nqmrsp2rmf6dfplcu5v9sfho8sque1pn2a33b9vr147bkobpr2v
     
-     # Sleep to let the .env file exist
-    - name: Wait for backend
-      run: sleep 15s
-
     # Run the backend app
     # & is used to signal that this task will keep running, as to not get stuck on this step
     - name: launch docker container
@@ -66,7 +62,7 @@ jobs:
       
     # Sleep to let the backend start
     - name: Wait for backend
-      run: sleep 15s
+      run: sleep 5s
       
     # Runs sequentially to starting the back-end app    
     - name: Install requirements
