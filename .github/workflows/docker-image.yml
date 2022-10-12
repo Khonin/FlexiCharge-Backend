@@ -60,10 +60,6 @@ jobs:
        docker-compose build
        docker-compose up &
       
-    # Sleep to let the backend start
-    - name: Wait for backend
-      run: sleep 5s
-      
     # Runs sequentially to starting the back-end app    
     - name: Install requirements
     # Installs the requirements
