@@ -60,7 +60,9 @@ jobs:
     # Run the backend app
     # & is used to signal that this task will keep running, as to not get stuck on this step
     - name: launch docker container
-      run: docker-compose up &
+      run: | 
+       docker-compose build
+       docker-compose up &
       
     # Sleep to let the backend start
     - name: Wait for backend
