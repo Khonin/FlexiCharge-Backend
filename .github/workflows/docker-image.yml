@@ -73,8 +73,7 @@ jobs:
       
     # Executes the tests within the /backend_tests folder 
     - name: Run PyTest
-      run: |
-        python -m pytest ./test/backend_tests --junit-xml=report.xml
+      run: python -m pytest ./test/backend_tests --junit-xml=report.xml
       
     # Displays a summary and overlook of test cases
     - name: Publish test result
