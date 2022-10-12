@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  Start-Backend-App:
+  Test-Backend-App:
 
     runs-on: ubuntu-latest
     #Environment used to access secrets
